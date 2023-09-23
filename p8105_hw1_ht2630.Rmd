@@ -34,7 +34,11 @@ library(tidyverse)
 
 time_hour = weather$time_hour
 
-ggplot(weather, aes(x = time_hour, y = temp)) + geom_point()
+ggplot(weather, 
+       aes(x = time_hour, y = temp)) + 
+  geom_point() + 
+  xlab("Date and Time") + 
+  ylab("Temperature")
 
 ggsave
 ```
