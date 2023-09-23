@@ -9,8 +9,9 @@ This is homework 1.
 
 ___
 
+Problem 1
+
 ```{r}
-# Problem 1
 
 library(moderndive)
 
@@ -35,7 +36,7 @@ library(tidyverse)
 time_hour = weather$time_hour
 
 ggplot(weather, 
-       aes(x = time_hour, y = temp, color = 'red')) + 
+       aes(x = time_hour, y = temp, color = humid)) + 
   geom_point() +
   xlab("Date and Time") + 
   ylab("Temperature")
@@ -62,5 +63,11 @@ According to the section of "Help",
 The last section shows the mean temperature is 39.58212. 
 
 The ggplot shows that temperature has some fluctuation across the time but a increasing trend is observed.  
+
+---
+
+Problem 2
+
+
 
 
