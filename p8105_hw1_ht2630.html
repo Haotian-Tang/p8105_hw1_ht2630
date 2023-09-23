@@ -358,14 +358,36 @@ display: none;
 
 
 <p>This is homework 1.</p>
+<hr />
 <pre class="r"><code># Problem 1
 
 library(moderndive)
 
-weather_data = data (&quot;early_january_weather&quot;)
+data(&quot;early_january_weather&quot;)
 
-class(weather_data)</code></pre>
-<pre><code>## [1] &quot;character&quot;</code></pre>
+?early_january_weather
+
+weather = early_january_weather
+
+colnames(weather)</code></pre>
+<pre><code>##  [1] &quot;origin&quot;     &quot;year&quot;       &quot;month&quot;      &quot;day&quot;        &quot;hour&quot;      
+##  [6] &quot;temp&quot;       &quot;dewp&quot;       &quot;humid&quot;      &quot;wind_dir&quot;   &quot;wind_speed&quot;
+## [11] &quot;wind_gust&quot;  &quot;precip&quot;     &quot;pressure&quot;   &quot;visib&quot;      &quot;time_hour&quot;</code></pre>
+<pre class="r"><code>ncol(weather)</code></pre>
+<pre><code>## [1] 15</code></pre>
+<pre class="r"><code>nrow(weather)</code></pre>
+<pre><code>## [1] 358</code></pre>
+<pre class="r"><code>temp = weather$temp
+
+mean(temp)</code></pre>
+<pre><code>## [1] 39.58212</code></pre>
+<p>We can see there are 15 columns and 358 rows. The variables are shown
+in the first result. In the section of “Help” is the explanation of
+variables. “temp” is the temperature. “dewp” is the dew point.
+“wind_dir”, “wind_speed”, and “wind_gust” are wind derection, speed and
+gust speed. “precip” is the precipitation. “visib” is the visibility.
+“time_hour” is the data and hour of recording. The last section shows
+the mean temperature is 39.58212.</p>
 
 
 

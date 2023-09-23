@@ -7,13 +7,28 @@ output: html_document
 
 This is homework 1. 
 
+___
+
 ```{r}
 # Problem 1
 
 library(moderndive)
 
-weather_data = data ("early_january_weather")
+data("early_january_weather")
 
-class(weather_data)
+?early_january_weather
+
+weather = early_january_weather
+
+colnames(weather)
+
+ncol(weather)
+
+nrow(weather)
+
+temp = weather$temp
+
+mean(temp)
 ```
 
+We can see there are 15 columns and 358 rows. The variables are shown in the first result. In the section of "Help" is the explanation of variables. "temp" is the temperature. "dewp" is the dew point. "wind_dir", "wind_speed", and "wind_gust" are wind derection, speed and gust speed. "precip" is the precipitation. "visib" is the visibility. "time_hour" is the data and hour of recording. The last section shows the mean temperature is 39.58212. 
