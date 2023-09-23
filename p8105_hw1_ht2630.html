@@ -416,6 +416,39 @@ and gust speed.</p>
 time but a increasing trend is observed.</p>
 <hr />
 <p>Problem 2</p>
+<pre class="r"><code>data_frame = tibble(
+  random_sample = rnorm(10), 
+  logical_vector = random_sample &gt; 0,
+  character_vector = c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, &quot;g&quot;, &quot;h&quot;, &quot;i&quot;, &quot;j&quot;),
+  factor_vector = factor(c(&quot;Level1&quot;, &quot;Level1&quot;, &quot;Level1&quot;, &quot;Level2&quot;, &quot;Level2&quot;, &quot;Level2&quot;, &quot;Level3&quot;, &quot;Level3&quot;, &quot;Level3&quot;, &quot;Level3&quot;))
+)
+
+mean(pull(data_frame, random_sample))</code></pre>
+<pre><code>## [1] 0.06458067</code></pre>
+<pre class="r"><code>mean(pull(data_frame, logical_vector))</code></pre>
+<pre><code>## [1] 0.6</code></pre>
+<pre class="r"><code>mean(pull(data_frame, character_vector))</code></pre>
+<pre><code>## Warning in mean.default(pull(data_frame, character_vector)): argument is not
+## numeric or logical: returning NA</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre class="r"><code>mean(pull(data_frame, factor_vector))</code></pre>
+<pre><code>## Warning in mean.default(pull(data_frame, factor_vector)): argument is not
+## numeric or logical: returning NA</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<p>Thus, we can find that we can take means from the random sample and
+logical vector,</p>
+<p>but not from character vector and factor vector.</p>
+<p>When we use as.numeric function to the last three vectors,</p>
+<p>we can find the logical vector shows 1 and 0, which explains why it
+has mean.</p>
+<p>The mean is just the frequency of TRUE.</p>
+<p>The as.numeric function of character vector shows NA,</p>
+<p>so it is not numeric and it does not have mean.</p>
+<p>However, we can find the as.numeric function of the factor vector
+shows 1, 2, and 3,</p>
+<p>which does not why the factor vector does not have mean.</p>
+<p>Therefore, it partially explains which of them have the mean.</p>
 
 
 

@@ -68,6 +68,52 @@ The ggplot shows that temperature has some fluctuation across the time but a inc
 
 Problem 2
 
+```{r}
 
+data_frame = tibble(
+  random_sample = rnorm(10), 
+  logical_vector = random_sample > 0,
+  character_vector = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
+  factor_vector = factor(c("Level1", "Level1", "Level1", "Level2", "Level2", "Level2", "Level3", "Level3", "Level3", "Level3"))
+)
+
+mean(pull(data_frame, random_sample))
+
+mean(pull(data_frame, logical_vector))
+
+mean(pull(data_frame, character_vector))
+
+mean(pull(data_frame, factor_vector))
+
+```
+
+```{r, echo = FALSE, results='hide'}
+
+as.numeric(data_frame$logical_vector)
+
+as.numeric(data_frame$character_vector)
+
+as.numeric(data_frame$factor_vector)
+
+```
+Thus, we can find that we can take means from the random sample and logical vector, 
+
+but not from character vector and factor vector. 
+
+When we use as.numeric function to the last three vectors, 
+
+we can find the logical vector shows 1 and 0, which explains why it has mean. 
+
+The mean is just the frequency of TRUE. 
+
+The as.numeric function of character vector shows NA, 
+
+so it is not numeric and it does not have mean. 
+
+However, we can find the as.numeric function of the factor vector shows 1, 2, and 3,
+
+which does not why the factor vector does not have mean. 
+
+Therefore, it partially explains which of them have the mean. 
 
 
