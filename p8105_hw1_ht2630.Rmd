@@ -29,6 +29,14 @@ nrow(weather)
 temp = weather$temp
 
 mean(temp)
+
+library(tidyverse)
+
+time_hour = weather$time_hour
+
+ggplot(weather, aes(x = time_hour, y = temp)) + geom_point()
 ```
 
 We can see there are 15 columns and 358 rows. The variables are shown in the first result. In the section of "Help" is the explanation of variables. "temp" is the temperature. "dewp" is the dew point. "wind_dir", "wind_speed", and "wind_gust" are wind derection, speed and gust speed. "precip" is the precipitation. "visib" is the visibility. "time_hour" is the data and hour of recording. The last section shows the mean temperature is 39.58212. 
+
+
